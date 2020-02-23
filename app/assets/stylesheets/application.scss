@@ -15,6 +15,7 @@
  */
 @import "bootstrap-sprockets";  /*ここを追加*/
 @import "bootstrap";            /*ここを追加*/
+.body { padding-top: 65px; }
 
 header {
 	color:white;
