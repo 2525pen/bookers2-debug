@@ -6,5 +6,9 @@ class Book < ApplicationRecord
 	#presence trueは空欄の場合を意味する。
 	validates :title, presence: true
 	validates :body, presence: true, length: {maximum: 200}
+    def favorited_by?(user) #メソッドを作成
+      favorites.where(user_id: user.id).exists?
+      # 引数で渡されたユーザidがFavoritesテーブル内に存在（exists?）するかどうかを調べます。
+    end
 end
 
