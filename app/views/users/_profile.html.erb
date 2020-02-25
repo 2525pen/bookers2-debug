@@ -22,10 +22,10 @@
 				<th><%= link_to 'edit',edit_user_path(user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_#{user.id}" %></th>
 			</tr>
 			<tr>
-    			<th><span>フォロー数:</span><%= link_to user.followers.count, follows_user_path(current_user.id) %></th>
+    			<th><span>フォロー数:</span><%= link_to user.followings.count, follows_user_path(current_user.id) %></th>
     		</tr>
     		<tr>
-    			<th><span>フォロワー数:</span><%= link_to user.followings.count, followers_user_path(current_user.id) %></th>
+    			<th><span>フォロワー数:</span><%= link_to user.followers.count, followers_user_path(current_user.id) %></th>
     		</tr>
    			<% end %>
 		</div>

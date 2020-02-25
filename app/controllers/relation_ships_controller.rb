@@ -11,6 +11,4 @@ class RelationShipsController < ApplicationController
     redirect_to request.referrer
   end
 
-  def index
-  end
 end

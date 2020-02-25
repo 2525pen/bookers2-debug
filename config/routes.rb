@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'home#top'
   devise_for :users
   resources :users, only: [:show,:index,:edit,:update] do
-  	resources :relation_ships, only: [:create, :destroy]
+  	resource :relation_ships, only: [:create, :destroy]
     get :follows, on: :member
     get :followers, on: :member
   end
