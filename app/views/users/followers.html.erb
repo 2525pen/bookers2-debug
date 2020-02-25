@@ -1,0 +1,28 @@
+<div class="col-xs-9">
+<h2>Follower Users</h2>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>image</th>
+			<th>name</th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @users.each do |user| %>
+		    <td><%= user.name %></td>
+		    <td>
+		    	<% if current_user != user %>
+			        <% if user.followed_by?(current_user) %>
+			            <%=link_to "フォロー済み", user_relation_ships_path(user.id), method: :delete %></p>
+			        <% else %>
+			            <p><%=link_to "フォローする", user_relation_ships_path(user.id), method: :post %></p>
+			        <% end %>
+			    <% end %>
+			</td>
+		<% end %>
+	</tbody>
